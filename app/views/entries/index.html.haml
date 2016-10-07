@@ -1,0 +1,14 @@
+%table.table.table-striped
+  %thead
+    %tr
+      %th Date
+      %th Description
+      %th Type
+      %th Amount
+  %tbody
+    - @entries.each do |entry|
+      %tr
+        %td= entry.released_at
+        %td= entry.description
+        %td= entry.kind
+        %td= entry.amount_cents
