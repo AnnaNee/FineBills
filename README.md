@@ -1,24 +1,20 @@
-# README
+# Finebills
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This software were built as a test, using Ruby on Rails.
+Follow these steps to install:
 
-Things you may want to cover:
+1. Clone Finebills repository:
+$ git clone https://github.com/AnnaNee/FineBills.git
 
-* Ruby version
+2. Requirements:
+   * Ruby 2.3.1
+   * Rails 5.0.0.1
 
-* System dependencies
+3. Run bundle install:
+$ bundle install
 
-* Configuration
+4. Migrate:
+$ rake db:migrate
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+5. Start rails server:
+$ rails s
