@@ -1,14 +1,25 @@
-%table.table.table-striped
-  %thead
-    %tr
-      %th Date
-      %th Description
-      %th Type
-      %th Amount
-  %tbody
-    - @entries.each do |entry|
-      %tr
-        %td= entry.released_at
-        %td= entry.description
-        %td= entry.kind
-        %td= entry.amount_cents
+.container
+  .row
+    .col-md-6
+      = form_for Entry.new, remote: true do |f|
+        .form-group= f.text_field :description, class: "form-control", placeholder: "Enter a description"
+        .form-group= f.select :kind, [["Income", :income], ["Expenses", :expenses]], {}, class: "form-control"
+        .form-group= f.number_field :amount_cents, class: "form-control", placeholder: "Entry amount"
+        .form-group= f.date_field :released_at, class: "form-control"
+        .form-group= f.submit "Submit", class: "btn btn-primary"
+  .row
+    .col-md-12
+      %table.table.table-striped
+        %thead
+          %tr
+            %th Date
+            %th Description
+            %th Type
+            %th Amount
+        %tbody
+          - @entries.each do |entry|
+            %tr
+              %td= entry.released_at
+              %td= entry.description
+              %td= entry.kind
+              %td= entry.amount.format
